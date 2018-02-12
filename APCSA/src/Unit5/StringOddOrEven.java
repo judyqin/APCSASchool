@@ -35,7 +35,7 @@ public class StringOddOrEven
 
  	public String toString()
  	{
- 		String output="";
+ 		String output ="";
  		if(isEven())
  		 output += word + " is even";
  
