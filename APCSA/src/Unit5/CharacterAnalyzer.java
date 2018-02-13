@@ -9,12 +9,13 @@ public class CharacterAnalyzer
 
 	public CharacterAnalyzer()
 	{
-		theChar = 'a';
+		theChar = '0';
 
 	}
 
 	public CharacterAnalyzer(char c)
 	{
+		
 
 		setChar(c);
 	}
@@ -27,14 +28,14 @@ public class CharacterAnalyzer
 
 	public char getChar()
 	{
-		return '-';
+		return theChar;
 	}
 
 	public boolean isUpper()
 	{
 		
-		if(65 <= getASCII()) 
-			if (getASCII() <= 90)
+		if(65 <= theChar) 
+			if (theChar <= 90)
 				return true; 
 
 
@@ -45,8 +46,8 @@ public class CharacterAnalyzer
 	public boolean isLower( )
 	{
 
-		if(97 <= getASCII()) 
-			if (getASCII() <= 122)
+		if(97 <= theChar) 
+			if (theChar <= 122)
 				return true; 
 
 		return false;
@@ -54,8 +55,8 @@ public class CharacterAnalyzer
 	
 	public boolean isNumber( )
 	{
-		if(48 <= getASCII()) 
-			if (getASCII() <= 57)
+		if(48 <= theChar) 
+			if (theChar <= 57)
 				return true; 
 
 		return false;
@@ -71,15 +72,22 @@ public class CharacterAnalyzer
 	public String toString()
 	{
  		
-		//if(isLower())
+		if (isUpper())
+		{
+			return ""+getChar() + " is an uppercase character. ASCII == " + getASCII() + "\n";	  
+		}
+		if (isLower())
+		{
 			return ""+getChar() + " is a lowercase character. ASCII == " + getASCII() + "\n";	  
-		
-		//if(isLower())
-			//return ""+getChar() + " is a lowercase character. ASCII == " + getASCII() + "\n";	
-		
-		//if(isLower())
-			//return ""+getChar() + " is a lowercase character. ASCII == " + getASCII() + "\n";	
-		
+		}
+		if(isNumber())
+		{
+			return ""+getChar() + " is a number. ASCII == " + getASCII() + "\n";	  
+		}
+		else
+		{
+			return null;
+		}
 		
 	}
 }
