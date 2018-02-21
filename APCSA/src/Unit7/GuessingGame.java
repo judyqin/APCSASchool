@@ -15,13 +15,9 @@ public class GuessingGame
 		upperBound = stop; 
 
 	}
-
 	public void playGame()
 	{
 		Scanner keyboard = new Scanner(System.in);
-		System.out.println("Guessing Game - how many numbers?" );
-		upperBound = keyboard.nextInt();
-		
 		random = (int)Math.random() * upperBound + 1; 
 		
 		int run = 0; 
@@ -30,8 +26,10 @@ public class GuessingGame
 			System.out.println("Enter a number between 1 and " + upperBound);
 			response = keyboard.nextInt();
 			run++;
-		} while (random != upperBound);
+		} while (random != response);
 		
+		System.out.println("It took you " + run + " guesses to guess " + random);
+		System.out.println("You guessed wrong " + (100.0 - (1.0/run) * (100)) + " percent of the time");
 		
 	}
 
