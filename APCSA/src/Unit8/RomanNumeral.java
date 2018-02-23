@@ -38,12 +38,19 @@ public class RomanNumeral
 	public Integer getNumber()
 	{
 
+		roman = roman.replaceAll("CM", "DCCCC");
+		roman = roman.replaceAll("CD", "CCCC");
+		roman = roman.replaceAll("XC", "LXXXX");
+		roman = roman.replaceAll("XL", "XXXX");
+		roman = roman.replaceAll("IX", "VIIII");
+		roman = roman.replaceAll("IV", "IIII");
+		
 		int count = 0;
 		for (int i = 0; i < LETTERS.length; i++)
 		{
 			for (int c = 0; c < roman.length(); c++)
 			{
-				if (c == i)
+				if (roman.substring(c, c+1).equals(LETTERS[i]))
 				{
 					count += NUMBERS[i];
 				}
