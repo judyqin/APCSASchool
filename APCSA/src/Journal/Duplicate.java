@@ -26,10 +26,10 @@ public class Duplicate {
 				if (numbers[i] != numbers[j])
 				{
 					list += numbers[i];
+					
 				}
 			}
 		}
-		
 		return list; 
 	}
 	
